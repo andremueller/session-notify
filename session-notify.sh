@@ -18,7 +18,7 @@ source /etc/pushover.d/session-notify.sh
 # PUSHOVER_API_TOKEN
 # PUSHOVER_USER_KEY
 
-message="${1:-no args}"
+message="user:$(id -un) ${1:-no args}"
 
 curl -s \
   --form-string "token=${PUSHOVER_API_TOKEN}" \
